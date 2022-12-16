@@ -616,7 +616,7 @@ class Gestion:
         
         lbl_entreprise = Label(Frame1, text="Entreprise", font=("times new roman", 18)).place(x=10,y=240)
         lbl_nom = Label(Frame1, text="Nom complet", font=("times new roman", 18)).place(x=10,y=310)
-        lbl_marque = Label(Frame1, text="marque", font=("times new roman", 18)).place(x=10,y=370)
+        lbl_marque = Label(Frame1, text="Marque", font=("times new roman", 18)).place(x=10,y=370)
         lbl_sexe = Label(Frame1, text="Sexe", font=("times new roman", 18)).place(x=10,y=430)
         lbl_email = Label(Frame1, text="Email", font=("times new roman", 18)).place(x=10,y=490)
         lbl_indentifiant = Label(Frame1, text="Identifiant", font=("times new roman", 18)).place(x=10,y=550)
@@ -636,7 +636,7 @@ class Gestion:
         
         
         
-        self.ecri_marque = ttk.Combobox(Frame1,textvariable=self.var_sexe, font=('times new roman',18), state="readonly")
+        self.ecri_marque = ttk.Combobox(Frame1,textvariable=self.var_marque, font=('times new roman',18), state="readonly")
         self.ecri_marque["values"] = ("DELL", "AZUS","HP","LENOVO","SAMSUNG","APPL","TUCHIBA")
         self.ecri_marque.place(x=120,y=370, width=240)
         self.ecri_marque.current(0)
@@ -780,15 +780,11 @@ class Gestion:
         
         self.recu = f'''\t\tUhtman DevSEc \n\tAdresse : Medine, jokko FC, Mbour
         -----------------------------------------------
-        Code Employer \t\t: ***
-        Nom     \t\t: ***
-        Domaine \t\t: ***
-        Salaire Mois: \t\t: ***
+        Numero de table de la machine \t\t: ***
+        Nom complet     \t\t: ***
+        Marque \t\t: ***
+        Année de livraison \t\t: ***
         Générer le \t\t: JJ/MM/AAAA
-        ----------------------------------------------
-        Nombre Heure \t\t: ***
-        Mode Paieument \t\t: ***
-        Salaire Net \t\t: ***
         ----------------------------------------------
         Par Mathieu
         uthman@gmail.com
@@ -822,15 +818,11 @@ class Gestion:
             #recu
             nouveau_recu = f'''\t\tUhtman DevSEc \n\tAdresse : Medine, jokko FC, Mbour
         -----------------------------------------------
-        Code Employer \t\t: {self.var_codeemplo.get()}
-        Nom \t\t: {self.var_nom.get()}
-        Domaine \t\t: {self.var_domne.get()}
-        Salaire Mois: \t\t: {self.var_mois.get()}
+        Numero de table de la machine \t\t: {self.var_codeemplo.get()}
+        Nom complet \t\t: {self.var_nom.get()}
+        Marque \t\t: {self.var_marque.get()}
+        Année de livraison \t\t: {self.var_anne.get()}
         Générer le \t\t: {str(time.strftime("%d-%m-%y"))}
-        ----------------------------------------------
-        Nombre Heure \t\t: {self.var_nbrHeure.get()}
-        Mode Paieument \t\t: {self.var_modepaie.get()}
-        Salaire Net \t\t: {self.var_salairenet.get()}
         ----------------------------------------------
         Par Mathieu
         uthman@gmail.com
